@@ -1,85 +1,104 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import {
-  FaBuilding,
-  FaCalendarAlt,
-  FaCogs,
-  FaMoneyBillWave,
-  FaTachometerAlt,
-  FaUsers,
-} from "react-icons/fa";
+  HiOutlineChartSquareBar,
+  HiOutlineUserGroup,
+  HiOutlineOfficeBuilding,
+  HiOutlineCalendar,
+  HiOutlineCash,
+  HiOutlineCog,
+} from "react-icons/hi";
 
 const AdminSidebar = () => {
   return (
-    <div className="bg-gray-800 text-white h-screen fixed left-0 top-0 bottom-0 space-y-2 w-64">
-      <div className="bg-teal-600 h-12 flex items-center justify-center">
-        <h3 className="text-2xl text-center font-pacific">Employee MS</h3>
+    <div className="bg-gray-800 text-white h-screen fixed w-64 space-y-6 shadow-lg">
+      {/* Header */}
+      <div className="bg-gradient-to-r from-blue-600 to-blue-900  h-16 flex items-center justify-center">
+        <h3 className="text-xl font-bold tracking-wide">Employee Management</h3>
       </div>
-      <div className="px-4">
+
+      {/* Navigation Links */}
+      <nav className="px-4 space-y-4">
         <NavLink
           to="/admin-dashboard"
           className={({ isActive }) =>
-            `${
-              isActive ? "bg-teal-500 " : " "
-            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+            `flex items-center space-x-4 px-4 py-3 rounded-lg text-sm font-medium transition ${
+              isActive
+                ? "bg-blue-500 text-white"
+                : "text-gray-300 hover:bg-blue-600 hover:text-white"
+            }`
           }
           end
         >
-          <FaTachometerAlt />
+          <HiOutlineChartSquareBar className="text-xl" />
           <span>Dashboard</span>
         </NavLink>
         <NavLink
           to="/admin-dashboard/employees"
           className={({ isActive }) =>
-            `${
-              isActive ? "bg-teal-500 " : " "
-            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+            `flex items-center space-x-4 px-4 py-3 rounded-lg text-sm font-medium transition ${
+              isActive
+                ? "bg-blue-500 text-white"
+                : "text-gray-300 hover:bg-blue-600 hover:text-white"
+            }`
           }
         >
-          <FaUsers />
+          <HiOutlineUserGroup className="text-xl" />
           <span>Employee</span>
         </NavLink>
         <NavLink
           to="/admin-dashboard/departments"
           className={({ isActive }) =>
-            `${
-              isActive ? "bg-teal-500 " : " "
-            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+            `flex items-center space-x-4 px-4 py-3 rounded-lg text-sm font-medium transition ${
+              isActive
+                ? "bg-blue-500 text-white"
+                : "text-gray-300 hover:bg-blue-600 hover:text-white"
+            }`
           }
         >
-          <FaBuilding />
+          <HiOutlineOfficeBuilding className="text-xl" />
           <span>Department</span>
         </NavLink>
         <NavLink
           to="/admin-dashboard/leaves"
           className={({ isActive }) =>
-            `${
-              isActive ? "bg-teal-500 " : " "
-            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+            `flex items-center space-x-4 px-4 py-3 rounded-lg text-sm font-medium transition ${
+              isActive
+                ? "bg-blue-500 text-white"
+                : "text-gray-300 hover:bg-blue-600 hover:text-white"
+            }`
           }
         >
-          <FaCalendarAlt />
+          <HiOutlineCalendar className="text-xl" />
           <span>Leave</span>
         </NavLink>
         <NavLink
           to="/admin-dashboard/salary/add"
           className={({ isActive }) =>
-            `${
-              isActive ? "bg-teal-500 " : " "
-            } flex items-center space-x-4 block py-2.5 px-4 rounded`
+            `flex items-center space-x-4 px-4 py-3 rounded-lg text-sm font-medium transition ${
+              isActive
+                ? "bg-blue-500 text-white"
+                : "text-gray-300 hover:bg-blue-600 hover:text-white"
+            }`
           }
         >
-          <FaMoneyBillWave />
+          <HiOutlineCash className="text-xl" />
           <span>Salary</span>
         </NavLink>
         <NavLink
           to="/admin-dashboard/setting"
-          className="flex items-center space-x-4 block py-2.5 px-4 rounded"
+          className={({ isActive }) =>
+            `flex items-center space-x-4 px-4 py-3 rounded-lg text-sm font-medium transition ${
+              isActive
+                ? "bg-blue-500 text-white"
+                : "text-gray-300 hover:bg-blue-600 hover:text-white"
+            }`
+          }
         >
-          <FaCogs />
+          <HiOutlineCog className="text-xl" />
           <span>Settings</span>
         </NavLink>
-      </div>
+      </nav>
     </div>
   );
 };

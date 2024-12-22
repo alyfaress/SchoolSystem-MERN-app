@@ -27,8 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/admin-dashboard" />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route
-          path="/admin-dashboard"
+        <Route path="/admin-dashboard"
           element={
             <PrivateRoutes>
               <RoleBaseRoutes requiredRole={["admin"]}>
