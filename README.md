@@ -10,14 +10,9 @@ This project is an Employee Management System built using the MERN stack (MongoD
    - **Settings:** Allows users to manage their profile and password.
    - **Utilities:** Handles reusable components like private routes and role-based access.
 
-![master react node mongodb employee management system](https://github.com/user-attachments/assets/58fc698b-c9d0-457d-a33a-a670a0fe7bdf)
 
 
-## Demo
-https://youtu.be/P_L-06VRcBI
 
-## How to Clone and Use this Project
-https://youtu.be/pEccfGmgrVY
 
 ## Installation
 To run this project locally, follow these steps:
@@ -65,10 +60,5 @@ To run this project locally, follow these steps:
    ```
 
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-Feel free to customize this template to better fit your project. Let me know if you need any more help!
 
