@@ -54,6 +54,7 @@ const Login = () => {
             </label>
             <input
               type="email"
+              value="admin@gmail.com"
               className="w-full px-3 py-2 border"
               placeholder="Enter Email"
               onChange={(e) => setEmail(e.target.value)}
@@ -66,6 +67,7 @@ const Login = () => {
             </label>
             <input
               type="password"
+              value="Admin"
               className="w-full px-3 py-2 border"
               placeholder="*****"
               onChange={(e) => setPassword(e.target.value)}
