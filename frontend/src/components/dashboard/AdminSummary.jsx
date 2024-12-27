@@ -46,7 +46,7 @@ const AdminSummary = () => {
   }
 
   return (
-    <div className="p-8 bg-gray-50 min-h-screen">
+    <div className="p-8 bg-gray-170 min-h-screen ">
       <h3 className="text-3xl font-extrabold text-gray-800 mb-8">
         Dashboard Overview
       </h3>

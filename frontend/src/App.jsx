@@ -29,8 +29,8 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/admin-dashboard"
           element={
-            <PrivateRoutes>
-              <RoleBaseRoutes requiredRole={["admin"]}>
+            <PrivateRoutes>{/*is from PrivateRoutes.jsx its takes children */}
+             <RoleBaseRoutes requiredRole={["admin"]}>{/*by passing  requiredRole={["admin"]} only admin user can access this route*/}
                 <AdminDashboard />
               </RoleBaseRoutes>
             </PrivateRoutes>
