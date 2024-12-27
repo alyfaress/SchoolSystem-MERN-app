@@ -9,7 +9,7 @@ const RoleBaseRoutes = ({children, requiredRole}) => {//"requiredRole": A parame
         return <div>Loading ...</div>
     }
 
-    if(!requiredRole.includes(user.role)) {// Checks if the user's role (from user.role) is not included in the requiredRole array.
+    if(!requiredRole.includes(user.role)) {//this is what makes specific user access this route,it Checks if the user's role (from user.role) is not included in the requiredRole array.
         alert("ok");
        <Navigate to="/unauthorized"/> 
     }
