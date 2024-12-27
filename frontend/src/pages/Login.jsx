@@ -14,13 +14,14 @@ const Login = () => {
     
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        { email, password }
+      const response = await axios.post(//comm3:response: Holds the server's response object, which typically includes (data & status):data: Contains the actual response data from the server(e.g., success status, user details, token...)  status: The HTTP status code (e.g., 200, 400, etc.).
+        "http://localhost:5000/api/auth/login",//coment1:this route is called in backend,and it has nothing to do with the website url(they are required in postman only),only <Routes> in App.jsx are ones that appears in url
+        { email, password }//coment2:pass the route these data
       );
-      if(response.data.success) {
-        login(response.data.user)
-        localStorage.setItem("token", response.data.token)
+      if(response.data.success){
+        login(response.data.user)//
+        localStorage.setItem("token", response.data.token)//Stores the authentication token (response.data.token) in the browser's localStorage.Why Store the Token: The token is used to authenticate subsequent requests to the server. For example, it may be included in the Authorization header of HTTP requests to access protected routes.javascriptCopy code
+        
         if(response.data.user.role === "admin") {
             navigate('/admin-dashboard')
         } else {
@@ -28,7 +29,8 @@ const Login = () => {
         }
       }
     } catch (error) {
-      if(error.response && !error.response.data.success) {
+      if(error.response && !error.response.data.success)//bring the error from server by error.response,then set in to error var in useState then display error down by {error && <p>{error}</p>}
+      {
         setError(error.response.data.error)
       } else {
         setError("Server Error")
@@ -54,7 +56,7 @@ const Login = () => {
             </label>
             <input
               type="email"
-              value="admin@gmail.com"
+             // value="admin@gmail.com"
               className="w-full px-3 py-2 border"
               placeholder="Enter Email"
               onChange={(e) => setEmail(e.target.value)}
@@ -67,8 +69,8 @@ const Login = () => {
             </label>
             <input
               type="password"
-              value="Admin"
               className="w-full px-3 py-2 border"
+              //value="admin"
               placeholder="*****"
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -98,3 +100,4 @@ const Login = () => {
 };
 
 export default Login;
+
